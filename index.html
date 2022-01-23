@@ -14,16 +14,23 @@
     ></script>
   </head>
   <body>
-    <main>
-      <div class="game-btn">
-        <button><i class="fas fa-hand-pointer"></i></button>
-      </div>
-      <div class="timer">
-        <span>00:00</span>
-      </div>
-      <div class="counter">
-        <span>5</span>
-      </div>
-    </main>
+    <section class="bg-img">
+      <header class="header">
+        <button class="game-btn">
+          <i class="fas fa-hand-pointer"></i>
+        </button>
+        <span class="time">00:00</span>
+        <span class="counter">5</span>
+      </header>
+
+      <section class="game-field"></section>
+    </section>
+
+    <footer class="modal hidden">
+      <button class="replay-btn">
+        <i class="fas fa-reply"></i>
+      </button>
+      <span class="modal-text">You won 🎉</span>
+    </footer>
   </body>
 </html>
