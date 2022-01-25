@@ -36,7 +36,8 @@ body::-webkit-scrollbar {
       background-color: #f1d5a1;
       margin-top: 40px;
 
-      .fa-hand-pointer {
+      .fa-hand-pointer,
+      .fa-stop {
         @include btn-style();
       }
     }

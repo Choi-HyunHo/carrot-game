@@ -58,11 +58,13 @@ body::-webkit-scrollbar {
       align-items: center;
       background-color: #f1d5a1;
       margin-top: 40px; }
-      .bg-img .header .game-btn .fa-hand-pointer {
+      .bg-img .header .game-btn .fa-hand-pointer,
+      .bg-img .header .game-btn .fa-stop {
         font-size: 70px;
         cursor: pointer;
         transition: all 400ms ease-in-out; }
-        .bg-img .header .game-btn .fa-hand-pointer:hover {
+        .bg-img .header .game-btn .fa-hand-pointer:hover,
+        .bg-img .header .game-btn .fa-stop:hover {
           color: white;
           transform: scale(1.2); }
     .bg-img .header .time {
