@@ -5,6 +5,7 @@ const modal = document.querySelector('.modal')
 const playIcon = document.querySelector('.play-icon')
 let started = false // 게임의 상태를 기억하는 변수
 let second = 10
+let interval
 
 playBtn.addEventListener('click', () => {
   if (started) {
@@ -18,15 +19,17 @@ playBtn.addEventListener('click', () => {
 })
 
 function startGame() {
-  gamePlay()
+  startTimer()
 }
 
-function stopGame() {}
+function stopGame() {
+  stopTimer()
+}
 
-function gamePlay() {
+function startTimer() {
   playIcon.setAttribute('class', 'fas fa-stop')
 
-  let interval = setInterval(function () {
+  interval = setInterval(function () {
     timer.innerHTML = `${second}`
     second--
 
@@ -35,4 +38,8 @@ function gamePlay() {
       modal.classList.remove('hidden')
     }
   }, 1000)
+}
+
+function stopTimer() {
+  clearInterval(interval)
 }
