@@ -2,13 +2,14 @@ const playBtn = document.querySelector('.game-btn')
 const timer = document.querySelector('.time')
 const counter = document.querySelector('.counter')
 const modal = document.querySelector('.modal')
+const modalText = document.querySelector('.modal-text')
 const field = document.querySelector('.game-field')
 const fieldRect = field.getBoundingClientRect()
 const CARROT_SIZE = 80
 
 const playIcon = document.querySelector('.play-icon')
 let started = false // 게임의 상태를 기억하는 변수
-let second = 8
+let second = 6
 let interval
 
 playBtn.addEventListener('click', () => {
@@ -40,7 +41,13 @@ function showTimerScore() {
 }
 
 function removePlayBtn() {
+  // 강제 종료 또는 게임이 끝났을 경우 사용
   playBtn.classList.add('state')
+  modalReplay()
+}
+
+function modalReplay() {
+  modalText.textContent = 'replay ?'
 }
 
 // 타이머
@@ -52,6 +59,8 @@ function startTimer() {
     if (second === -1) {
       clearInterval(interval)
       modal.classList.remove('hidden')
+      playBtn.classList.add('state')
+      return
     }
   }, 1000)
 }
