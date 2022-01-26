@@ -59,13 +59,17 @@ function onField() {
 }
 
 function addItem(name, count, imgPath) {
-  const x = fieldRect.width
-  const y = fieldRect.height
+  const x1 = 0 // 사각형의 시작점 (좌측 상단)
+  const y1 = 0
+  const x2 = fieldRect.width // 사각형 우측 하단
+  const y2 = fieldRect.height
   for (i = 0; i <= count; i++) {
     const item = document.createElement('img')
     item.setAttribute('class', name)
     item.setAttribute('src', imgPath)
-    item.style.transform = `translate(${x}px, ${y}px)`
+    item.style.position = 'absolute'
+    item.style.transform = `translate(${x1}px, ${y1}px)`
+    item.style.transform = `translate(${x2}px, ${y2}px)`
     field.append('item')
   }
 }
