@@ -68,8 +68,14 @@ function addItem(name, count, imgPath) {
     item.setAttribute('class', name)
     item.setAttribute('src', imgPath)
     item.style.position = 'absolute'
-    item.style.transform = `translate(${x1}px, ${y1}px)`
-    item.style.transform = `translate(${x2}px, ${y2}px)`
+    const horizontal = randomField(x1, x2)
+    const vertical = randomField(y1, y2)
+    horizontal.style.transform = `translate(${x1}px, ${x2}px)`
+    vertical.style.transform = `translate(${y1}px, ${y2}px)`
     field.append('item')
   }
+}
+
+function randomField(min, max) {
+  return Math.floor(Math.random() * (max - min) + min)
 }
