@@ -91,6 +91,8 @@ body::-webkit-scrollbar {
       align-items: center;
       color: white;
       font-size: 50px; }
+    .bg-img .header .state {
+      visibility: hidden; }
   .bg-img .game-field {
     position: relative;
     width: 100%;

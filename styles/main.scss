@@ -68,6 +68,10 @@ body::-webkit-scrollbar {
       color: white;
       font-size: 50px;
     }
+
+    .state {
+      visibility: hidden;
+    }
   }
 
   .game-field {
@@ -107,7 +111,6 @@ body::-webkit-scrollbar {
     font-weight: bold;
   }
 }
-
 .hidden {
   display: none;
 }
