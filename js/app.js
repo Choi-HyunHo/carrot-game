@@ -5,6 +5,7 @@ const modal = document.querySelector('.modal')
 const modalText = document.querySelector('.modal-text')
 const field = document.querySelector('.game-field')
 const fieldRect = field.getBoundingClientRect()
+const replayBtn = document.querySelector('.replay-btn')
 
 const CARROT_COUNT = 6
 const BUG_COUNT = 6
@@ -106,3 +107,10 @@ function addItem(name, count, imgPath) {
 function randomField(min, max) {
   return Math.floor(Math.random() * (max - min) + min)
 }
+
+replayBtn.addEventListener('click', () => {
+  modal.classList.add('hidden')
+  onField()
+  startTimer()
+  playBtn.classList.remove('state')
+})
