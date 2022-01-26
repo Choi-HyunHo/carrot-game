@@ -5,6 +5,9 @@ const modal = document.querySelector('.modal')
 const modalText = document.querySelector('.modal-text')
 const field = document.querySelector('.game-field')
 const fieldRect = field.getBoundingClientRect()
+
+const CARROT_COUNT = 6
+const BUG_COUNT = 6
 const CARROT_SIZE = 80
 
 const playIcon = document.querySelector('.play-icon')
@@ -26,6 +29,7 @@ playBtn.addEventListener('click', () => {
 function startGame() {
   showTimerScore()
   startTimer()
+  gameScore()
   onField()
 }
 
@@ -48,6 +52,10 @@ function removePlayBtn() {
 
 function modalReplay() {
   modalText.textContent = 'replay ?'
+}
+
+function gameScore() {
+  counter.textContent = CARROT_COUNT
 }
 
 // 타이머
@@ -73,8 +81,8 @@ function stopTimer() {
 // 아이템 필드 위에 배치하기
 function onField() {
   field.innerHTML = ''
-  addItem('carrot', 6, 'img/carrot.png')
-  addItem('bug', 6, 'img/bug.png')
+  addItem('carrot', CARROT_COUNT, 'img/carrot.png')
+  addItem('bug', BUG_COUNT, 'img/bug.png')
 }
 
 function addItem(name, count, imgPath) {
