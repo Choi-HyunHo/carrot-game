@@ -27,6 +27,7 @@ playBtn.addEventListener('click', () => {
 replayBtn.addEventListener('click', () => {
   startGame()
   modal.classList.add('hidden')
+  playBtn.classList.remove('state')
 })
 
 function startGame() {
@@ -40,6 +41,7 @@ function startGame() {
 function stopGame() {
   started = false
   stopTimer()
+  playBtn.classList.add('state')
 }
 
 function showTimerScore() {
@@ -56,6 +58,7 @@ function startTimer() {
     if (second <= 0) {
       clearInterval(interval)
       modal.classList.remove('hidden')
+      playBtn.classList.add('state')
       return
     }
     updateTime(--second)
