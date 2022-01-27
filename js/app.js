@@ -108,3 +108,9 @@ function randomField(min, max) {
 function gameScore() {
   counter.textContent = CARROT_COUNT
 }
+
+field.addEventListener('click', (event) => {
+  if (event.target.className === 'carrot') {
+    event.target.remove()
+  }
+})
