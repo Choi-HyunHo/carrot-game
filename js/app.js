@@ -13,7 +13,6 @@ const CARROT_SIZE = 80
 
 const playIcon = document.querySelector('.play-icon')
 let started = false // 게임의 상태를 기억하는 변수
-let second = 5
 let interval
 
 playBtn.addEventListener('click', () => {
@@ -27,6 +26,7 @@ playBtn.addEventListener('click', () => {
 
 replayBtn.addEventListener('click', () => {
   startGame()
+  modal.classList.add('hidden')
 })
 
 function startGame() {
@@ -40,7 +40,6 @@ function startGame() {
 function stopGame() {
   started = false
   stopTimer()
-  removePlayBtn()
 }
 
 function showTimerScore() {
@@ -51,10 +50,12 @@ function showTimerScore() {
 
 // 타이머
 function startTimer() {
+  let second = 5
+  updateTime(second)
   interval = setInterval(() => {
-    updateTime(second)
     if (second <= 0) {
       clearInterval(interval)
+      modal.classList.remove('hidden')
       return
     }
     updateTime(--second)
@@ -99,16 +100,6 @@ function addItem(name, count, imgPath) {
 
 function randomField(min, max) {
   return Math.floor(Math.random() * (max - min) + min)
-}
-
-function removePlayBtn() {
-  // 강제 종료 또는 게임이 끝났을 경우 사용
-  playBtn.classList.add('state')
-  modalReplay()
-}
-
-function modalReplay() {
-  modalText.textContent = 'replay ?'
 }
 
 function gameScore() {
