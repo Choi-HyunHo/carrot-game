@@ -13,7 +13,7 @@ const CARROT_SIZE = 80
 
 const playIcon = document.querySelector('.play-icon')
 let started = false // 게임의 상태를 기억하는 변수
-let second = 6
+let second = 5
 let interval
 
 playBtn.addEventListener('click', () => {
@@ -22,12 +22,15 @@ playBtn.addEventListener('click', () => {
   } else {
     startGame()
   }
-
-  started = !started
   console.log(started)
 })
 
+replayBtn.addEventListener('click', () => {
+  startGame()
+})
+
 function startGame() {
+  started = true
   showTimerScore()
   startTimer()
   gameScore()
@@ -35,6 +38,7 @@ function startGame() {
 }
 
 function stopGame() {
+  started = false
   stopTimer()
   removePlayBtn()
 }
@@ -45,33 +49,22 @@ function showTimerScore() {
   counter.classList.remove('state')
 }
 
-function removePlayBtn() {
-  // 강제 종료 또는 게임이 끝났을 경우 사용
-  playBtn.classList.add('state')
-  modalReplay()
-}
-
-function modalReplay() {
-  modalText.textContent = 'replay ?'
-}
-
-function gameScore() {
-  counter.textContent = CARROT_COUNT
-}
-
 // 타이머
 function startTimer() {
-  interval = setInterval(function () {
-    timer.innerHTML = `${second}`
-    second--
-
-    if (second === -1) {
+  interval = setInterval(() => {
+    updateTime(second)
+    if (second <= 0) {
       clearInterval(interval)
-      modal.classList.remove('hidden')
-      playBtn.classList.add('state')
       return
     }
+    updateTime(--second)
   }, 1000)
+}
+
+function updateTime(sec) {
+  const minutes = 0
+  const seconds = sec
+  timer.textContent = `${minutes} : ${seconds} `
 }
 
 function stopTimer() {
@@ -108,9 +101,16 @@ function randomField(min, max) {
   return Math.floor(Math.random() * (max - min) + min)
 }
 
-replayBtn.addEventListener('click', () => {
-  modal.classList.add('hidden')
-  onField()
-  startTimer()
-  playBtn.classList.remove('state')
-})
+function removePlayBtn() {
+  // 강제 종료 또는 게임이 끝났을 경우 사용
+  playBtn.classList.add('state')
+  modalReplay()
+}
+
+function modalReplay() {
+  modalText.textContent = 'replay ?'
+}
+
+function gameScore() {
+  counter.textContent = CARROT_COUNT
+}
