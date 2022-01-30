@@ -70,11 +70,15 @@ function updateTime(sec) {
   const minutes = 0
   const seconds = sec
   timer.textContent = `${minutes} : ${seconds} `
+  if (seconds === 0) {
+    modalText.textContent = 'you lose 😭'
+  }
 }
 
 function stopTimer() {
   clearInterval(interval)
   modal.classList.remove('hidden')
+  modalText.textContent = 'replay ❓'
 }
 
 // 아이템 필드 위에 배치하기
@@ -114,9 +118,16 @@ field.addEventListener('click', (event) => {
     event.target.remove()
     score++
     gameScore(score)
+  } else if (event.target.className === 'bug') {
+    stopGame()
+    modalText.textContent = 'you lose 😭'
   }
 })
 
 function gameScore(point) {
   counter.textContent = CARROT_COUNT - point
+  if (CARROT_COUNT === point) {
+    stopGame()
+    modalText.textContent = 'You won 🎉'
+  }
 }
