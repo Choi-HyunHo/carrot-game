@@ -36,6 +36,7 @@ function startGame() {
   showTimerScore()
   startTimer()
   onField()
+  bgSound()
 }
 
 function stopGame() {
