@@ -34,7 +34,6 @@ function startGame() {
   started = true
   showTimerScore()
   startTimer()
-  gameScore()
   onField()
 }
 
@@ -81,6 +80,7 @@ function onField() {
   field.innerHTML = ''
   addItem('carrot', CARROT_COUNT, 'img/carrot.png')
   addItem('bug', BUG_COUNT, 'img/bug.png')
+  counter.textContent = CARROT_COUNT
 }
 
 function addItem(name, count, imgPath) {
@@ -105,12 +105,16 @@ function randomField(min, max) {
   return Math.floor(Math.random() * (max - min) + min)
 }
 
-function gameScore() {
-  counter.textContent = CARROT_COUNT
-}
-
+// carrot 지우기
+let score = 0
 field.addEventListener('click', (event) => {
   if (event.target.className === 'carrot') {
     event.target.remove()
+    score++
+    gameScore(score)
   }
 })
+
+function gameScore(point) {
+  counter.textContent = CARROT_COUNT - point
+}
