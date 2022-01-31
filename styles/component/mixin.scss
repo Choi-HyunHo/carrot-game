@@ -19,3 +19,8 @@
     transform: scale(1.2);
   }
 }
+
+@mixin user-select {
+  user-select: none;
+  cursor: auto;
+}
