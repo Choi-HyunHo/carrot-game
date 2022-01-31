@@ -15,6 +15,12 @@ const playIcon = document.querySelector('.play-icon')
 let started = false // 게임의 상태를 기억하는 변수
 let interval
 
+const bg = new Audio('sound/bg.mp3')
+const carrot_bg = new Audio('sound/carrot_pull.mp3')
+const bug_bg = new Audio('sound/bug_pull.mp3')
+const win_bg = new Audio('sound/game_win.mp3')
+const modal_bg = new Audio('sound/alert.wav')
+
 playBtn.addEventListener('click', () => {
   if (started) {
     stopGame()
@@ -36,14 +42,17 @@ function startGame() {
   showTimerScore()
   startTimer()
   onField()
-  bgSound()
+  bg.play()
 }
 
 function stopGame() {
   started = false
+  modal_bg.play()
   stopTimer()
   playBtn.classList.add('state')
   score = 0
+  bg.pause()
+  bg.currentTime = 0
 }
 
 function showTimerScore() {
@@ -61,6 +70,8 @@ function startTimer() {
       clearInterval(interval)
       modal.classList.remove('hidden')
       playBtn.classList.add('state')
+      bg.pause()
+      bg.currentTime = 0
       return
     }
     updateTime(--second)
@@ -73,6 +84,8 @@ function updateTime(sec) {
   timer.textContent = `${minutes} : ${seconds} `
   if (seconds === 0) {
     modalText.textContent = 'you lose 😭'
+    bg.pause()
+    modal_bg.play()
   }
 }
 
@@ -116,11 +129,14 @@ function randomField(min, max) {
 let score = 0
 field.addEventListener('click', (event) => {
   if (event.target.className === 'carrot') {
+    carrot_bg.play()
     event.target.remove()
     score++
     gameScore(score)
   } else if (event.target.className === 'bug') {
+    bug_bg.play()
     stopGame()
+    modal_bg.play()
     modalText.textContent = 'you lose 😭'
   }
 })
@@ -129,6 +145,8 @@ function gameScore(point) {
   counter.textContent = CARROT_COUNT - point
   if (CARROT_COUNT === point) {
     stopGame()
+    win_bg.play()
+    modal_bg.pause()
     modalText.textContent = 'You won 🎉'
   }
 }
