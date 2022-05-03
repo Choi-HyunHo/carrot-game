@@ -16,7 +16,7 @@ URL : https://choi-hyunho.github.io/carrot-game/
 <img align="left" src="https://user-images.githubusercontent.com/87301268/166413304-b3e9c648-3436-4c50-9832-a69261b495a4.jpg" width="400" >
 <img align="left" src="https://user-images.githubusercontent.com/87301268/166413307-3bb15dfa-f8eb-487f-b504-d3a33dc67a80.jpg" width="400" >
 <img align="left" src="https://user-images.githubusercontent.com/87301268/166413311-e3c87716-eb20-47e9-a75a-e260997d8c53.jpg" width="400" >
-<img src="https://user-images.githubusercontent.com/87301268/166413313-58c77246-a992-4520-8074-9c131406502c.jpg" width="400" >
+<img align="right" src="https://user-images.githubusercontent.com/87301268/166413313-58c77246-a992-4520-8074-9c131406502c.jpg" width="400" >
 
 <br>
 
