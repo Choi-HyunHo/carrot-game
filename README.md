@@ -13,15 +13,9 @@ URL : https://choi-hyunho.github.io/carrot-game/
 
 ## 💄 Carrot Game 게임 화면
 
-<<<<<<< HEAD
-<img src="https://user-images.githubusercontent.com/87301268/166413304-b3e9c648-3436-4c50-9832-a69261b495a4.jpg" width="400" >
-<img  src="https://user-images.githubusercontent.com/87301268/166413307-3bb15dfa-f8eb-487f-b504-d3a33dc67a80.jpg" width="400" >
-<img src="https://user-images.githubusercontent.com/87301268/166413311-e3c87716-eb20-47e9-a75a-e260997d8c53.jpg" width="400" >
-=======
 <img align="left" src="https://user-images.githubusercontent.com/87301268/166413304-b3e9c648-3436-4c50-9832-a69261b495a4.jpg" width="400" >
 <img src="https://user-images.githubusercontent.com/87301268/166413307-3bb15dfa-f8eb-487f-b504-d3a33dc67a80.jpg" width="400" >
 <img align="left" src="https://user-images.githubusercontent.com/87301268/166413311-e3c87716-eb20-47e9-a75a-e260997d8c53.jpg" width="400" >
->>>>>>> effad244fb99e55585aba7309fdee79b26dad127
 <img src="https://user-images.githubusercontent.com/87301268/166413313-58c77246-a992-4520-8074-9c131406502c.jpg" width="400" >
 
 <br>
@@ -76,7 +70,3 @@ URL : https://choi-hyunho.github.io/carrot-game/
 - 필드 위의 당근과 벌레가 각각 다른 기능을 해야 합니다.
 - 하지만 일일이 요소에게 이벤트를 부여하게 되면, 동적인 요소를 처리하기 위한 효율이 좋지 않습니다.<br> 그래서 아이템의 부모인 필드에게 이벤트 위임을 하였습니다.
 - 이벤트 위임을 이론이 아닌 직접 사용할 수 있었고, 개발자로서 효율적이게 코드를 작성하는 것이 <br> 가독성 및 작업 속도에 큰 영향을 줄 수 있다 라고 느끼게 되었습니다.
-<<<<<<< HEAD
-=======
-
->>>>>>> effad244fb99e55585aba7309fdee79b26dad127
