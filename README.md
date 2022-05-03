@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Carrot Game
 
 URL : https://choi-hyunho.github.io/carrot-game/
@@ -15,7 +14,7 @@ URL : https://choi-hyunho.github.io/carrot-game/
 ## 💄 Carrot Game 게임 화면
 
 <img src="https://user-images.githubusercontent.com/87301268/166413304-b3e9c648-3436-4c50-9832-a69261b495a4.jpg" width="400" >
-<img src="https://user-images.githubusercontent.com/87301268/166413307-3bb15dfa-f8eb-487f-b504-d3a33dc67a80.jpg" width="400" >
+<img  src="https://user-images.githubusercontent.com/87301268/166413307-3bb15dfa-f8eb-487f-b504-d3a33dc67a80.jpg" width="400" >
 <img src="https://user-images.githubusercontent.com/87301268/166413311-e3c87716-eb20-47e9-a75a-e260997d8c53.jpg" width="400" >
 <img src="https://user-images.githubusercontent.com/87301268/166413313-58c77246-a992-4520-8074-9c131406502c.jpg" width="400" >
 
@@ -52,6 +51,13 @@ URL : https://choi-hyunho.github.io/carrot-game/
 
 ## 🔥 어려웠던 부분 & 느낀 점
 
+### HTML 파일에 JavaScript 파일을 넣는 위치 및 방법
+
+- JavaScript 공부를 하면서 누군가는 `<head>` 안에 넣기도 하고<br> 또 다른 사람은 `<body>` 의 가장 마지막 부분으로 옮겨서 사용하기도 합니다.
+- 이에 대해 궁금함이 생겼고 찾아보며 공부를 하여 [정리](https://velog.io/@hoho_0815/script-%ED%83%9C%EA%B7%B8%EB%8A%94-%EC%96%B4%EB%94%94%EC%97%90-%EC%9C%84%EC%B9%98%ED%95%B4%EC%95%BC-%ED%95%A0%EA%B9%8C-r1mb885i)를 하였습니다.
+
+<br>
+
 ### 이미지 경로 지정 문제
 
 - 배경 이미지를 지정하는데 화면에 나타나지 않았습니다.<br>문제점을 찾아보다가 경로 지정이 문제라는 것을 알게 되었습니다.
@@ -64,8 +70,3 @@ URL : https://choi-hyunho.github.io/carrot-game/
 - 필드 위의 당근과 벌레가 각각 다른 기능을 해야 합니다.
 - 하지만 일일이 요소에게 이벤트를 부여하게 되면, 동적인 요소를 처리하기 위한 효율이 좋지 않습니다.<br> 그래서 아이템의 부모인 필드에게 이벤트 위임을 하였습니다.
 - 이벤트 위임을 이론이 아닌 직접 사용할 수 있었고, 개발자로서 효율적이게 코드를 작성하는 것이 <br> 가독성 및 작업 속도에 큰 영향을 줄 수 있다 라고 느끼게 되었습니다.
-=======
-# carrot-game 
-사이트 주소 : https://choi-hyunho.github.io/carrot-game/</br>
-프로젝트 소개 : https://choi-hyunho.notion.site/Carrot-Game-892d194a85944253a03ceff912b7bb23
->>>>>>> f6b411c5c8ead543bf6ac89cacba2dae35950f2e
